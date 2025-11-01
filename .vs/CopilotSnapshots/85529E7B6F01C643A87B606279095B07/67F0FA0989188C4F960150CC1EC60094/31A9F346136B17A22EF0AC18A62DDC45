@@ -1,0 +1,98 @@
+﻿using College.Application.DTOs;
+using College.Application.Services.Contracts;
+using College.Domain.Entities;
+using College.Domain.Repositories;
+
+namespace College.Application.Services
+{
+    public class StudentService : IStudentService
+    {
+        private readonly IStudentRepository _studentRepository;
+        private readonly ICourseRepository _courseRepository;
+
+        public StudentService(IStudentRepository studentRepository, ICourseRepository courseRepository)
+        {
+            _studentRepository = studentRepository;
+            _courseRepository = courseRepository;
+        }
+
+        public async Task<StudentDto?> GetByIdAsync(int id)
+        {
+            Student? studentEntity = await _studentRepository.GetByIdAsync(id);
+            if (studentEntity == null)
+                return null;
+
+            return new StudentDto
+            {
+                Id = studentEntity.Id,
+                FullName = studentEntity.FullName,
+                CourseCode = studentEntity.Course.Code
+            };
+        }
+
+        public async Task<IEnumerable<StudentDto>> GetAllAsync()
+        {
+            IEnumerable<Student> studentsCollection = await _studentRepository.GetAllAsync();
+            
+            return studentsCollection.Select(studentEntity => new StudentDto
+            {
+                Id = studentEntity.Id,
+                FullName = studentEntity.FullName,
+                CourseCode = studentEntity.Course.Code
+            });
+        }
+
+        public async Task<StudentDto> CreateAsync(CreateStudentDto createStudentDto)
+        {
+            Course? courseEntity = await _courseRepository.GetByCodeAsync(createStudentDto.CourseCode);
+            if (courseEntity == null)
+            {
+                throw new InvalidOperationException($"El curso con código {createStudentDto.CourseCode} no existe. No se puede crear el estudiante sin un curso válido.");
+            }
+
+            Student studentEntity = new Student(createStudentDto.FullName, courseEntity);
+            Student createdStudentEntity = await _studentRepository.AddAsync(studentEntity);
+
+            return new StudentDto
+            {
+                Id = createdStudentEntity.Id,
+                FullName = createdStudentEntity.FullName,
+                CourseCode = createdStudentEntity.Course.Code
+            };
+        }
+
+        public async Task<StudentDto?> UpdateAsync(int id, UpdateStudentDto updateStudentDto)
+        {
+            Student? studentEntity = await _studentRepository.GetByIdAsync(id);
+            if (studentEntity == null)
+                return null;
+
+            Course? courseEntity = await _courseRepository.GetByCodeAsync(updateStudentDto.CourseCode);
+            if (courseEntity == null)
+            {
+                throw new InvalidOperationException($"El curso con código {updateStudentDto.CourseCode} no existe. No se puede actualizar el estudiante con un curso inválido.");
+            }
+
+            studentEntity.UpdateFullName(updateStudentDto.FullName);
+            studentEntity.UpdateCourse(courseEntity);
+            await _studentRepository.UpdateAsync(studentEntity);
+
+            return new StudentDto
+            {
+                Id = studentEntity.Id,
+                FullName = studentEntity.FullName,
+                CourseCode = studentEntity.Course.Code
+            };
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            Student? studentEntity = await _studentRepository.GetByIdAsync(id);
+            if (studentEntity == null)
+                return false;
+
+            await _studentRepository.DeleteAsync(id);
+            return true;
+        }
+    }
+}

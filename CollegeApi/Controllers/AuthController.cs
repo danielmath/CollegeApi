@@ -1,0 +1,69 @@
+using College.Application.DTOs;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+
+namespace CollegeApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [AllowAnonymous]
+    public class AuthController : ControllerBase
+    {
+        private readonly IConfiguration _configuration;
+
+        public AuthController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
+        [HttpPost("login")]
+        public ActionResult<LoginResponse> Login([FromBody] LoginRequest loginRequest)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if (loginRequest.Usuario != "admin" || loginRequest.Contraseña != "12345")
+                return Unauthorized("Credenciales inválidas");
+
+            string tokenGenerated = GenerarToken();
+            DateTime expirationTime = DateTime.UtcNow.AddHours(1);
+
+            LoginResponse responseObject = new LoginResponse
+            {
+                Token = tokenGenerated,
+                ExpirationDate = expirationTime
+            };
+
+            return Ok(responseObject);
+        }
+
+        private string GenerarToken()
+        {
+            string claveSecreta = _configuration["JwtSettings:ClaveSecreta"] ?? "ClaveSecretaMuySeguraParaJWT2024CollegeApi";
+            SymmetricSecurityKey keyObject = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(claveSecreta));
+            SigningCredentials credencialesObject = new SigningCredentials(keyObject, SecurityAlgorithms.HmacSha256);
+
+            Claim[] claimsArray = new[]
+            {
+                new Claim(ClaimTypes.Name, "admin"),
+                new Claim(ClaimTypes.Role, "Administrator"),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Iat, new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64)
+            };
+
+            JwtSecurityToken tokenObject = new JwtSecurityToken(
+                issuer: _configuration["JwtSettings:Issuer"] ?? "CollegeApi",
+                audience: _configuration["JwtSettings:Audience"] ?? "CollegeApiUsuarios",
+                claims: claimsArray,
+                expires: DateTime.UtcNow.AddHours(1),
+                signingCredentials: credencialesObject
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(tokenObject);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+﻿using College.Domain.Repositories;
+
+namespace College.Infrastructure.Repositories
+{
+    public class CourseRepository : ICourseRepository
+    {
+
+    }
+}

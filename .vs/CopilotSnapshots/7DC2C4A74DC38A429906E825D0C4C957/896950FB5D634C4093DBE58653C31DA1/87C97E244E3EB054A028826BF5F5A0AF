@@ -1,0 +1,12 @@
+﻿namespace College.Application.DTOs
+{
+    public class GradeDto
+    {
+        public Guid id { get; set; }
+        public decimal value { get; set; }
+        public string letter { get; set; } = string.Empty;
+        public DateTime dateRecorded { get; set; }
+        public Guid studentId { get; set; }
+        public Guid courseId { get; set; }
+    }
+}

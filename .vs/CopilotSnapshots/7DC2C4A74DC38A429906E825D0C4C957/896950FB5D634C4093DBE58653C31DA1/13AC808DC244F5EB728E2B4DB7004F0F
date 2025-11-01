@@ -1,0 +1,11 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace College.Application.DTOs
+{
+    public class UpdateStudentDto
+    {
+        [Required]
+        [StringLength(100)]
+        public string fullName { get; set; } = string.Empty;
+    }
+}

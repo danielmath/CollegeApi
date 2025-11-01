@@ -1,0 +1,94 @@
+﻿using College.Application.DTOs;
+using College.Domain.Entities;
+using College.Domain.Repositories;
+
+namespace College.Application.Services
+{
+    public class GradeService : IGradeService
+    {
+        private readonly IGradeRepository _gradeRepository;
+
+        public GradeService(IGradeRepository gradeRepository)
+        {
+            _gradeRepository = gradeRepository;
+        }
+
+        public async Task<GradeDto?> GetByIdAsync(Guid id)
+        {
+            var grade = await _gradeRepository.GetByIdAsync(id);
+            if (grade == null)
+                return null;
+
+            return new GradeDto
+            {
+                id = grade.Id,
+                value = grade.Value,
+                letter = grade.Letter,
+                dateRecorded = grade.DateRecorded,
+                studentId = grade.StudentId,
+                courseId = grade.CourseId
+            };
+        }
+
+        public async Task<IEnumerable<GradeDto>> GetAllAsync()
+        {
+            var grades = await _gradeRepository.GetAllAsync();
+            
+            return grades.Select(grade => new GradeDto
+            {
+                id = grade.Id,
+                value = grade.Value,
+                letter = grade.Letter,
+                dateRecorded = grade.DateRecorded,
+                studentId = grade.StudentId,
+                courseId = grade.CourseId
+            });
+        }
+
+        public async Task<GradeDto> CreateAsync(CreateGradeDto createGradeDto)
+        {
+            var grade = new Grade(createGradeDto.value, createGradeDto.letter, createGradeDto.studentId, createGradeDto.courseId);
+            var createdGrade = await _gradeRepository.AddAsync(grade);
+
+            return new GradeDto
+            {
+                id = createdGrade.Id,
+                value = createdGrade.Value,
+                letter = createdGrade.Letter,
+                dateRecorded = createdGrade.DateRecorded,
+                studentId = createdGrade.StudentId,
+                courseId = createdGrade.CourseId
+            };
+        }
+
+        public async Task<GradeDto?> UpdateAsync(Guid id, UpdateGradeDto updateGradeDto)
+        {
+            var grade = await _gradeRepository.GetByIdAsync(id);
+            if (grade == null)
+                return null;
+
+            grade.UpdateGrade(updateGradeDto.value, updateGradeDto.letter);
+            await _gradeRepository.UpdateAsync(grade);
+
+            return new GradeDto
+            {
+                id = grade.Id,
+                value = grade.Value,
+                letter = grade.Letter,
+                dateRecorded = grade.DateRecorded,
+                studentId = grade.StudentId,
+                courseId = grade.CourseId
+            };
+        }
+
+        public async Task<bool> DeleteAsync(Guid id)
+        {
+            var grade = await _gradeRepository.GetByIdAsync(id);
+            if (grade == null)
+                return false;
+
+            await _gradeRepository.DeleteAsync(id);
+            return true;
+        }
+    }
+}

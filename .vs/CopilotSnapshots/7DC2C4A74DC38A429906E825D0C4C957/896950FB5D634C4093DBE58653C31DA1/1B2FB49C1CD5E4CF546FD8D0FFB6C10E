@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace College.Domain.Entities
+{
+    public class Grade
+    {
+        public Guid Id { get; private set; }
+        public decimal Value { get; private set; }
+        public string Letter { get; private set; }
+        public DateTime DateRecorded { get; private set; }
+        public Guid StudentId { get; private set; }
+        public Guid CourseId { get; private set; }
+
+        public Student Student { get; private set; }
+        public Course Course { get; private set; }
+
+        public Grade(decimal value, string letter, Guid studentId, Guid courseId)
+        {
+            Id = Guid.NewGuid();
+            Value = value;
+            Letter = letter;
+            StudentId = studentId;
+            CourseId = courseId;
+            DateRecorded = DateTime.UtcNow;
+        }
+
+        public void UpdateGrade(decimal value, string letter)
+        {
+            Value = value;
+            Letter = letter;
+            DateRecorded = DateTime.UtcNow;
+        }
+    }
+}

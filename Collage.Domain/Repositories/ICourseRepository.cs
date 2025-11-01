@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using College.Domain.Entities;
+
+namespace College.Domain.Repositories
+{
+    public interface ICourseRepository
+    {
+        Task<Course?> GetByIdAsync(int id);
+        Task<Course?> GetByCodeAsync(string code);
+        Task<Course> AddAsync(Course course);
+        Task UpdateAsync(Course course);
+        Task DeleteAsync(int id);
+        Task<IEnumerable<Course>> GetAllAsync();
+    }
+}

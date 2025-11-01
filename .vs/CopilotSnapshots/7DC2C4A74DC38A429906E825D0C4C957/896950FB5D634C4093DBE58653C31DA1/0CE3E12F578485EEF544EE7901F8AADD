@@ -1,0 +1,8 @@
+﻿namespace College.Application.DTOs
+{
+    public class StudentDto
+    {
+        public Guid id { get; set; }
+        public string fullName { get; set; } = string.Empty;
+    }
+}

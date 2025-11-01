@@ -1,0 +1,86 @@
+﻿using College.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace College.Infrastructure.Data
+{
+    public class CollegeDbContext : DbContext
+    {
+        public CollegeDbContext(DbContextOptions<CollegeDbContext> options)
+        : base(options)
+        {
+        }
+
+        public DbSet<Student> Students => Set<Student>();
+        public DbSet<Course> Courses => Set<Course>();
+        public DbSet<Professor> Professors => Set<Professor>();
+        public DbSet<Grade> Grades => Set<Grade>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Student>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.FullName)
+                    .IsRequired()
+                    .HasMaxLength(100);
+                entity.Ignore(e => e.Grades);
+            });
+
+            modelBuilder.Entity<Course>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(100);
+                entity.Property(e => e.Code)
+                    .IsRequired()
+                    .HasMaxLength(20);
+                entity.Property(e => e.Credits)
+                    .IsRequired();
+                entity.Ignore(e => e.Grades);
+            });
+
+            modelBuilder.Entity<Professor>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.FullName)
+                    .IsRequired()
+                    .HasMaxLength(100);
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(100);
+                entity.Property(e => e.Department)
+                    .IsRequired()
+                    .HasMaxLength(100);
+                entity.Ignore(e => e.Courses);
+            });
+
+            modelBuilder.Entity<Grade>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Value)
+                    .IsRequired()
+                    .HasColumnType("decimal(5,2)");
+                entity.Property(e => e.Letter)
+                    .IsRequired()
+                    .HasMaxLength(2);
+                entity.Property(e => e.DateRecorded)
+                    .IsRequired();
+                entity.Property(e => e.StudentId)
+                    .IsRequired();
+                entity.Property(e => e.CourseId)
+                    .IsRequired();
+                
+                entity.HasOne(e => e.Student)
+                    .WithMany()
+                    .HasForeignKey(e => e.StudentId);
+                
+                entity.HasOne(e => e.Course)
+                    .WithMany()
+                    .HasForeignKey(e => e.CourseId);
+            });
+
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+}

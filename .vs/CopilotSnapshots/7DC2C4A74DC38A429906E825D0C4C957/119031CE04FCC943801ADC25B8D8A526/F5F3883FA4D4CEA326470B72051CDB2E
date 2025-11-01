@@ -1,0 +1,97 @@
+﻿using College.Application.DTOs;
+using College.Domain.Entities;
+using College.Domain.Repositories;
+
+namespace College.Application.Services
+{
+    public class StudentService : IStudentService
+    {
+        private readonly IStudentRepository _studentRepository;
+        private readonly ICourseRepository _courseRepository;
+
+        public StudentService(IStudentRepository studentRepository, ICourseRepository courseRepository)
+        {
+            _studentRepository = studentRepository;
+            _courseRepository = courseRepository;
+        }
+
+        public async Task<StudentDto?> GetByIdAsync(int id)
+        {
+            var student = await _studentRepository.GetByIdAsync(id);
+            if (student == null)
+                return null;
+
+            return new StudentDto
+            {
+                id = student.Id,
+                fullName = student.FullName,
+                courseId = student.CourseId
+            };
+        }
+
+        public async Task<IEnumerable<StudentDto>> GetAllAsync()
+        {
+            var students = await _studentRepository.GetAllAsync();
+            
+            return students.Select(student => new StudentDto
+            {
+                id = student.Id,
+                fullName = student.FullName,
+                courseId = student.CourseId
+            });
+        }
+
+        public async Task<StudentDto> CreateAsync(CreateStudentDto createStudentDto)
+        {
+            var courseExists = await _courseRepository.GetByIdAsync(createStudentDto.courseId);
+            if (courseExists == null)
+            {
+                throw new InvalidOperationException($"El curso con ID {createStudentDto.courseId} no existe. No se puede crear el estudiante sin un curso válido.");
+            }
+
+            var student = new Student(createStudentDto.fullName, createStudentDto.courseId);
+            var createdStudent = await _studentRepository.AddAsync(student);
+
+            return new StudentDto
+            {
+                id = createdStudent.Id,
+                fullName = createdStudent.FullName,
+                courseId = createdStudent.CourseId
+            };
+        }
+
+        public async Task<StudentDto?> UpdateAsync(int id, UpdateStudentDto updateStudentDto)
+        {
+            var student = await _studentRepository.GetByIdAsync(id);
+            if (student == null)
+                return null;
+
+            var courseExists = await _courseRepository.GetByIdAsync(updateStudentDto.courseId);
+            if (courseExists == null)
+            {
+                throw new InvalidOperationException($"El curso con ID {updateStudentDto.courseId} no existe. No se puede actualizar el estudiante con un curso inválido.");
+            }
+
+            student.UpdateFullName(updateStudentDto.fullName);
+            student.UpdateCourse(updateStudentDto.courseId);
+            await _studentRepository.UpdateAsync(student);
+
+            return new StudentDto
+            {
+                id = student.Id,
+                fullName = student.FullName,
+                courseId = student.CourseId
+            };
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var student = await _studentRepository.GetByIdAsync(id);
+            if (student == null)
+                return false;
+
+            await _studentRepository.DeleteAsync(id);
+            return true;
+        }
+    }
+}

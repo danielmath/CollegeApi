@@ -1,0 +1,110 @@
+﻿using College.Application.DTOs;
+using College.Domain.Entities;
+using College.Domain.Repositories;
+
+namespace College.Application.Services
+{
+    public class GradeService : IGradeService
+    {
+        private readonly IGradeRepository _gradeRepository;
+        private readonly IStudentRepository _studentRepository;
+        private readonly ICourseRepository _courseRepository;
+
+        public GradeService(IGradeRepository gradeRepository, IStudentRepository studentRepository, ICourseRepository courseRepository)
+        {
+            _gradeRepository = gradeRepository;
+            _studentRepository = studentRepository;
+            _courseRepository = courseRepository;
+        }
+
+        public async Task<GradeDto?> GetByIdAsync(int id)
+        {
+            Grade? gradeEntity = await _gradeRepository.GetByIdAsync(id);
+            if (gradeEntity == null)
+                return null;
+
+            return new GradeDto
+            {
+                id = gradeEntity.Id,
+                value = gradeEntity.Value,
+                letter = gradeEntity.Letter,
+                dateRecorded = gradeEntity.DateRecorded,
+                studentId = gradeEntity.StudentId,
+                courseId = gradeEntity.CourseId
+            };
+        }
+
+        public async Task<IEnumerable<GradeDto>> GetAllAsync()
+        {
+            IEnumerable<Grade> gradesCollection = await _gradeRepository.GetAllAsync();
+            
+            return gradesCollection.Select(gradeEntity => new GradeDto
+            {
+                id = gradeEntity.Id,
+                value = gradeEntity.Value,
+                letter = gradeEntity.Letter,
+                dateRecorded = gradeEntity.DateRecorded,
+                studentId = gradeEntity.StudentId,
+                courseId = gradeEntity.CourseId
+            });
+        }
+
+        public async Task<GradeDto> CreateAsync(CreateGradeDto createGradeDto)
+        {
+            Student? studentExists = await _studentRepository.GetByIdAsync(createGradeDto.studentId);
+            if (studentExists == null)
+            {
+                throw new InvalidOperationException($"El estudiante con ID {createGradeDto.studentId} no existe. No se puede crear la calificación.");
+            }
+
+            Course? courseExists = await _courseRepository.GetByIdAsync(createGradeDto.courseId);
+            if (courseExists == null)
+            {
+                throw new InvalidOperationException($"El curso con ID {createGradeDto.courseId} no existe. No se puede crear la calificación.");
+            }
+
+            Grade gradeEntity = new Grade(createGradeDto.value, createGradeDto.letter, createGradeDto.studentId, createGradeDto.courseId);
+            Grade createdGradeEntity = await _gradeRepository.AddAsync(gradeEntity);
+
+            return new GradeDto
+            {
+                id = createdGradeEntity.Id,
+                value = createdGradeEntity.Value,
+                letter = createdGradeEntity.Letter,
+                dateRecorded = createdGradeEntity.DateRecorded,
+                studentId = createdGradeEntity.StudentId,
+                courseId = createdGradeEntity.CourseId
+            };
+        }
+
+        public async Task<GradeDto?> UpdateAsync(int id, UpdateGradeDto updateGradeDto)
+        {
+            Grade? gradeEntity = await _gradeRepository.GetByIdAsync(id);
+            if (gradeEntity == null)
+                return null;
+
+            gradeEntity.UpdateGrade(updateGradeDto.value, updateGradeDto.letter);
+            await _gradeRepository.UpdateAsync(gradeEntity);
+
+            return new GradeDto
+            {
+                id = gradeEntity.Id,
+                value = gradeEntity.Value,
+                letter = gradeEntity.Letter,
+                dateRecorded = gradeEntity.DateRecorded,
+                studentId = gradeEntity.StudentId,
+                courseId = gradeEntity.CourseId
+            };
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            Grade? gradeEntity = await _gradeRepository.GetByIdAsync(id);
+            if (gradeEntity == null)
+                return false;
+
+            await _gradeRepository.DeleteAsync(id);
+            return true;
+        }
+    }
+}

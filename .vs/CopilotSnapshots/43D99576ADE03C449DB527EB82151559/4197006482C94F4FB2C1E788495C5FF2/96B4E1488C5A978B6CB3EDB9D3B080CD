@@ -1,0 +1,50 @@
+﻿using College.Domain.Entities;
+using College.Domain.Repositories;
+using College.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace College.Infrastructure.Repositories
+{
+    public class GradeRepository : IGradeRepository
+    {
+        private readonly CollegeDbContext _context;
+
+        public GradeRepository(CollegeDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<Grade?> GetByIdAsync(Guid id)
+        {
+            return await _context.Grades.FindAsync(id);
+        }
+
+        public async Task<IEnumerable<Grade>> GetAllAsync()
+        {
+            return await _context.Grades.ToListAsync();
+        }
+
+        public async Task<Grade> AddAsync(Grade grade)
+        {
+            _context.Grades.Add(grade);
+            await _context.SaveChangesAsync();
+            return grade;
+        }
+
+        public async Task UpdateAsync(Grade grade)
+        {
+            _context.Grades.Update(grade);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var grade = await GetByIdAsync(id);
+            if (grade != null)
+            {
+                _context.Grades.Remove(grade);
+                await _context.SaveChangesAsync();
+            }
+        }
+    }
+}

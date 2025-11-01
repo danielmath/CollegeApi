@@ -1,0 +1,71 @@
+using College.Application.DTOs;
+using College.Application.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CollegeApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [Authorize]
+    public class GradeController : ControllerBase
+    {
+        private readonly IGradeService _gradeService;
+
+        public GradeController(IGradeService gradeService)
+        {
+            _gradeService = gradeService;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GradeDto>> GetGradeById(int id)
+        {
+            GradeDto? gradeDto = await _gradeService.GetByIdAsync(id);
+            if (gradeDto == null)
+                return NotFound();
+
+            return Ok(gradeDto);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<GradeDto>> CreateGrade([FromBody] CreateGradeDto createGradeDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                GradeDto gradeDto = await _gradeService.CreateAsync(createGradeDto);
+                return CreatedAtAction(nameof(GetGradeById), new { id = gradeDto.Id }, gradeDto);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<GradeDto>> UpdateGrade(int id, [FromBody] UpdateGradeDto updateGradeDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            GradeDto? gradeDto = await _gradeService.UpdateAsync(id, updateGradeDto);
+
+            if (gradeDto == null)
+                return NotFound();
+
+            return Ok(gradeDto);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteGrade(int id)
+        {
+            bool resultOperation = await _gradeService.DeleteAsync(id);
+            if (!resultOperation)
+                return NotFound();
+
+            return NoContent();
+        }
+    }
+}

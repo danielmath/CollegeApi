@@ -1,0 +1,28 @@
+﻿using College.Application.DTOs;
+using College.Application.UseCases.Students.Queries;
+using College.Domain.Repositories;
+using MediatR;
+
+namespace College.Application.UseCases.Students.Handlers
+{
+    public class GetAllStudentsHandler : IRequestHandler<GetAllStudentsQuery, IEnumerable<StudentDto>>
+    {
+        private readonly IStudentRepository _studentRepository;
+
+        public GetAllStudentsHandler(IStudentRepository studentRepository)
+        {
+            _studentRepository = studentRepository;
+        }
+
+        public async Task<IEnumerable<StudentDto>> Handle(GetAllStudentsQuery request, CancellationToken cancellationToken)
+        {
+            var students = await _studentRepository.GetAllAsync();
+            
+            return students.Select(student => new StudentDto
+            {
+                id = student.Id,
+                fullName = student.FullName
+            });
+        }
+    }
+}

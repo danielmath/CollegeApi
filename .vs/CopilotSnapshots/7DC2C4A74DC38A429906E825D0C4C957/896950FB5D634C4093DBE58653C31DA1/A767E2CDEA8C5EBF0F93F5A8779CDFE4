@@ -1,0 +1,65 @@
+﻿using College.Application.DTOs;
+using College.Application.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CollegeApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [Authorize]
+    public class GradeController : ControllerBase
+    {
+        private readonly IGradeService _gradeService;
+
+        public GradeController(IGradeService gradeService)
+        {
+            _gradeService = gradeService;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GradeDto>> GetGradeById(Guid id)
+        {
+            var grade = await _gradeService.GetByIdAsync(id);
+            if (grade == null)
+                return NotFound();
+
+            return Ok(grade);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<GradeDto>> CreateGrade([FromBody] CreateGradeDto createGradeDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var grade = await _gradeService.CreateAsync(createGradeDto);
+
+            return CreatedAtAction(nameof(GetGradeById), new { id = grade.id }, grade);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<GradeDto>> UpdateGrade(Guid id, [FromBody] UpdateGradeDto updateGradeDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var grade = await _gradeService.UpdateAsync(id, updateGradeDto);
+
+            if (grade == null)
+                return NotFound();
+
+            return Ok(grade);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteGrade(Guid id)
+        {
+            var result = await _gradeService.DeleteAsync(id);
+            if (!result)
+                return NotFound();
+
+            return NoContent();
+        }
+    }
+}

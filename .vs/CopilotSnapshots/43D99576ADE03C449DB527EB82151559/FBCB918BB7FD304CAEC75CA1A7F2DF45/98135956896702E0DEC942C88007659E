@@ -1,0 +1,12 @@
+﻿using College.Application.DTOs;
+
+namespace College.Application.Services
+{
+    public interface ICourseService
+    {
+        Task<CourseDto?> GetByIdAsync(Guid id);
+        Task<CourseDto> CreateAsync(CreateCourseDto createCourseDto);
+        Task<CourseDto?> UpdateAsync(Guid id, UpdateCourseDto updateCourseDto);
+        Task<bool> DeleteAsync(Guid id);
+    }
+}

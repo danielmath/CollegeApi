@@ -1,0 +1,11 @@
+﻿using College.Application.DTOs;
+using MediatR;
+
+namespace College.Application.UseCases.Students.Commands
+{
+    public class UpdateStudentCommand : IRequest<StudentDto?>
+    {
+        public Guid id { get; set; }
+        public string fullName { get; set; } = string.Empty;
+    }
+}

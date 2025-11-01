@@ -1,0 +1,29 @@
+﻿using College.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace College.Infrastructure.Data
+{
+    public class CollegeDbContext : DbContext
+    {
+        public CollegeDbContext(DbContextOptions<CollegeDbContext> options)
+        : base(options)
+        {
+        }
+
+        public DbSet<Student> Students => Set<Student>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Student>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.FullName)
+                    .IsRequired()
+                    .HasMaxLength(100);
+                entity.Ignore(e => e.Grades);
+            });
+
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+}

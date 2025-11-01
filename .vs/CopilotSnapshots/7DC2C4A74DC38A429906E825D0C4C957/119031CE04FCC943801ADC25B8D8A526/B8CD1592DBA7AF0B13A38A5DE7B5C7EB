@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using College.Domain.Entities;
+
+namespace College.Domain.Repositories
+{
+    public interface IGradeRepository
+    {
+        Task<Grade?> GetByIdAsync(int id);
+        Task<Grade> AddAsync(Grade grade);
+        Task UpdateAsync(Grade grade);
+        Task DeleteAsync(int id);
+        Task<IEnumerable<Grade>> GetAllAsync();
+    }
+}

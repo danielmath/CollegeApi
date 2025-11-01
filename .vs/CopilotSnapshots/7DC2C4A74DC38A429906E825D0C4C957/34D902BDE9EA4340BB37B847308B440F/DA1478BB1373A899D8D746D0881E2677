@@ -1,0 +1,13 @@
+﻿using College.Application.DTOs;
+
+namespace College.Application.Services
+{
+    public interface IGradeService
+    {
+        Task<GradeDto?> GetByIdAsync(int id);
+        Task<IEnumerable<GradeDto>> GetAllAsync();
+        Task<GradeDto> CreateAsync(CreateGradeDto createGradeDto);
+        Task<GradeDto?> UpdateAsync(int id, UpdateGradeDto updateGradeDto);
+        Task<bool> DeleteAsync(int id);
+    }
+}

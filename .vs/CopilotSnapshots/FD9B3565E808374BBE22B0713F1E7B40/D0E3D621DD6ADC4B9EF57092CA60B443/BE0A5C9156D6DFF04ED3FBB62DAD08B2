@@ -1,0 +1,83 @@
+﻿using College.Application.DTOs;
+using College.Application.Services.Contracts;
+using College.Domain.Entities;
+using College.Domain.Repositories;
+
+namespace College.Application.Services
+{
+    public class ProfessorService : IProfessorService
+    {
+        private readonly IProfessorRepository _professorRepository;
+
+        public ProfessorService(IProfessorRepository professorRepository)
+        {
+            _professorRepository = professorRepository;
+        }
+
+        public async Task<ProfessorDto?> GetByIdAsync(int id)
+        {
+            Professor? professorEntity = await _professorRepository.GetByIdAsync(id);
+            if (professorEntity == null)
+                return null;
+
+            return new ProfessorDto
+            {
+                FullName = professorEntity.FullName,
+                Email = professorEntity.Email,
+                Area = professorEntity.Area
+            };
+        }
+
+        public async Task<IEnumerable<ProfessorDto>> GetAllAsync()
+        {
+            IEnumerable<Professor> professorsCollection = await _professorRepository.GetAllAsync();
+            
+            return professorsCollection.Select(professorEntity => new ProfessorDto
+            {
+                FullName = professorEntity.FullName,
+                Email = professorEntity.Email,
+                Area = professorEntity.Area
+            });
+        }
+
+        public async Task<ProfessorDto> CreateAsync(CreateProfessorDto createProfessorDto)
+        {
+            Professor professorEntity = new Professor(createProfessorDto.FullName, createProfessorDto.Email, createProfessorDto.Area);
+            Professor createdProfessorEntity = await _professorRepository.AddAsync(professorEntity);
+
+            return new ProfessorDto
+            {
+                FullName = createdProfessorEntity.FullName,
+                Email = createdProfessorEntity.Email,
+                Area = createdProfessorEntity.Area
+            };
+        }
+
+        public async Task<ProfessorDto?> UpdateAsync(int id, UpdateProfessorDto updateProfessorDto)
+        {
+            Professor? professorEntity = await _professorRepository.GetByIdAsync(id);
+            if (professorEntity == null)
+                return null;
+
+            professorEntity.UpdateDetails(updateProfessorDto.FullName, updateProfessorDto.Email, updateProfessorDto.Area);
+            await _professorRepository.UpdateAsync(professorEntity);
+
+            return new ProfessorDto
+            {
+                FullName = professorEntity.FullName,
+                Email = professorEntity.Email,
+                Area = professorEntity.Area
+            };
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            Professor? professorEntity = await _professorRepository.GetByIdAsync(id);
+            if (professorEntity == null)
+                return false;
+
+            await _professorRepository.DeleteAsync(id);
+            return true;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace College.Domain.Entities
+{
+    public class Course
+    {
+        public Guid Id { get; private set; }
+        public string Name { get; private set; }
+        public string Code { get; private set; }
+        public int Credits { get; private set; }
+
+        private readonly List<Grade> _grades = new();
+        public IReadOnlyCollection<Grade> Grades => _grades.AsReadOnly();
+
+        public Course(string name, string code, int credits)
+        {
+            Id = Guid.NewGuid();
+            Name = name;
+            Code = code;
+            Credits = credits;
+        }
+
+        public void UpdateDetails(string name, string code, int credits)
+        {
+            Name = name;
+            Code = code;
+            Credits = credits;
+        }
+    }
+}

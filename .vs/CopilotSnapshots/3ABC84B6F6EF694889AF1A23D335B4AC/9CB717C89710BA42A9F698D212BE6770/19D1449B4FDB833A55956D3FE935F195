@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace College.Domain.Entities
+{
+    public class Student
+    {
+        public Guid Id { get; private set; }
+        public string FullName { get; private set; }
+
+        private readonly List<Grade> _grades = new();
+        public IReadOnlyCollection<Grade> Grades => _grades.AsReadOnly();
+
+        public Student(string fullName)
+        {
+            Id = Guid.NewGuid();
+            FullName = fullName;
+        }
+
+        //public void EnrollInCourse(Course course)
+        //{
+        //    if (_grades.Any(e => e.Course.Id == course.Id))
+        //        throw new InvalidOperationException("Already enrolled in this course.");
+
+        //    _grades.Add(new Grade(this, course));
+        //}
+    }
+}

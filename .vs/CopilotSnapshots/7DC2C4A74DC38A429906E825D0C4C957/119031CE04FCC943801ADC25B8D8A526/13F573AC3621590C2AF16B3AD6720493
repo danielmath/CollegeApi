@@ -1,0 +1,13 @@
+﻿using College.Application.DTOs;
+
+namespace College.Application.Services
+{
+    public interface IStudentService
+    {
+        Task<StudentDto?> GetByIdAsync(Guid id);
+        Task<IEnumerable<StudentDto>> GetAllAsync();
+        Task<StudentDto> CreateAsync(CreateStudentDto createStudentDto);
+        Task<StudentDto?> UpdateAsync(Guid id, UpdateStudentDto updateStudentDto);
+        Task<bool> DeleteAsync(Guid id);
+    }
+}

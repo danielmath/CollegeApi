@@ -1,0 +1,21 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace College.Application.DTOs
+{
+    public class CreateGradeDto
+    {
+        [Required]
+        [Range(0, 100)]
+        public decimal value { get; set; }
+        
+        [Required]
+        [StringLength(2)]
+        public string letter { get; set; } = string.Empty;
+        
+        [Required]
+        public Guid studentId { get; set; }
+        
+        [Required]
+        public Guid courseId { get; set; }
+    }
+}

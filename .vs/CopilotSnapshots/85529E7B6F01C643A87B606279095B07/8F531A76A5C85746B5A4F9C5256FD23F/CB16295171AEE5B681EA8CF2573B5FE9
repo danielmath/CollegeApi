@@ -1,0 +1,65 @@
+﻿using College.Application.DTOs;
+using College.Application.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CollegeApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [Authorize]
+    public class ProfessorController : ControllerBase
+    {
+        private readonly IProfessorService _professorService;
+
+        public ProfessorController(IProfessorService professorService)
+        {
+            _professorService = professorService;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProfessorDto>> GetProfessorById(int id)
+        {
+            ProfessorDto? professorDto = await _professorService.GetByIdAsync(id);
+            if (professorDto == null)
+                return NotFound();
+
+            return Ok(professorDto);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<ProfessorDto>> CreateProfessor([FromBody] CreateProfessorDto createProfessorDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            ProfessorDto professorDto = await _professorService.CreateAsync(createProfessorDto);
+
+            return CreatedAtAction(nameof(GetProfessorById), new { id = professorDto.Id }, professorDto);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ProfessorDto>> UpdateProfessor(int id, [FromBody] UpdateProfessorDto updateProfessorDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            ProfessorDto? professorDto = await _professorService.UpdateAsync(id, updateProfessorDto);
+
+            if (professorDto == null)
+                return NotFound();
+
+            return Ok(professorDto);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteProfessor(int id)
+        {
+            bool resultOperation = await _professorService.DeleteAsync(id);
+            if (!resultOperation)
+                return NotFound();
+
+            return NoContent();
+        }
+    }
+}

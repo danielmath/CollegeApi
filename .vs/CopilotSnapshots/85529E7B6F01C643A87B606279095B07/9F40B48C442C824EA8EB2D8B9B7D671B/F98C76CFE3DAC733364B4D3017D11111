@@ -1,0 +1,107 @@
+﻿using College.Application.DTOs;
+using College.Application.Services.Contracts;
+using College.Domain.Entities;
+using College.Domain.Repositories;
+
+namespace College.Application.Services
+{
+    public class GradeService : IGradeService
+    {
+        private readonly IGradeRepository _gradeRepository;
+        private readonly IStudentRepository _studentRepository;
+        private readonly ICourseRepository _courseRepository;
+
+        public GradeService(IGradeRepository gradeRepository, IStudentRepository studentRepository, ICourseRepository courseRepository)
+        {
+            _gradeRepository = gradeRepository;
+            _studentRepository = studentRepository;
+            _courseRepository = courseRepository;
+        }
+
+        public async Task<GradeDto?> GetByIdAsync(int id)
+        {
+            Grade? gradeEntity = await _gradeRepository.GetByIdAsync(id);
+            if (gradeEntity == null)
+                return null;
+
+            return new GradeDto
+            {
+                Id = gradeEntity.Id,
+                Value = gradeEntity.Value,
+                DateRecorded = gradeEntity.DateRecorded,
+                StudentId = gradeEntity.Student.Id,
+                CourseCode = gradeEntity.Course.Code
+            };
+        }
+
+        public async Task<IEnumerable<GradeDto>> GetAllAsync()
+        {
+            IEnumerable<Grade> gradesCollection = await _gradeRepository.GetAllAsync();
+            
+            return gradesCollection.Select(gradeEntity => new GradeDto
+            {
+                Id = gradeEntity.Id,
+                Value = gradeEntity.Value,
+                DateRecorded = gradeEntity.DateRecorded,
+                StudentId = gradeEntity.Student.Id,
+                CourseCode = gradeEntity.Course.Code
+            });
+        }
+
+        public async Task<GradeDto> CreateAsync(CreateGradeDto createGradeDto)
+        {
+            Student? studentExists = await _studentRepository.GetByIdAsync(createGradeDto.StudentId);
+            if (studentExists == null)
+            {
+                throw new InvalidOperationException($"El estudiante con ID {createGradeDto.StudentId} no existe. No se puede crear la calificación.");
+            }
+
+            Course? courseExists = await _courseRepository.GetByIdAsync(createGradeDto.Id);
+            if (courseExists == null)
+            {
+                throw new InvalidOperationException($"El curso con ID {createGradeDto.CourseCode} no existe. No se puede crear la calificación.");
+            }
+
+            Grade gradeEntity = new Grade(createGradeDto.Value, studentExists, courseExists);
+            Grade createdGradeEntity = await _gradeRepository.AddAsync(gradeEntity);
+
+            return new GradeDto
+            {
+                Id = createdGradeEntity.Id,
+                Value = createdGradeEntity.Value,
+                DateRecorded = createdGradeEntity.DateRecorded,
+                StudentId = createdGradeEntity.Student.Id,
+                CourseCode = createdGradeEntity.Course.Code
+            };
+        }
+
+        public async Task<GradeDto?> UpdateAsync(int id, UpdateGradeDto updateGradeDto)
+        {
+            Grade? gradeEntity = await _gradeRepository.GetByIdAsync(id);
+            if (gradeEntity == null)
+                return null;
+
+            gradeEntity.UpdateGrade(updateGradeDto.Value);
+            await _gradeRepository.UpdateAsync(gradeEntity);
+
+            return new GradeDto
+            {
+                Id = gradeEntity.Id,
+                Value = gradeEntity.Value,
+                DateRecorded = gradeEntity.DateRecorded,
+                StudentId = gradeEntity.Student.Id,
+                CourseCode = gradeEntity.Course.Code
+            };
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            Grade? gradeEntity = await _gradeRepository.GetByIdAsync(id);
+            if (gradeEntity == null)
+                return false;
+
+            await _gradeRepository.DeleteAsync(id);
+            return true;
+        }
+    }
+}

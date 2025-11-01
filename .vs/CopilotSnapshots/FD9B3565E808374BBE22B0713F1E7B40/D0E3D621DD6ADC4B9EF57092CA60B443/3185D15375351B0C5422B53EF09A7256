@@ -1,0 +1,9 @@
+﻿namespace College.Application.DTOs
+{
+    public class StudentDto
+    {
+        public int Id { get; set; }
+        public string FullName { get; set; } = string.Empty;
+        public string CourseCode { get; set; } = string.Empty;
+    }
+}

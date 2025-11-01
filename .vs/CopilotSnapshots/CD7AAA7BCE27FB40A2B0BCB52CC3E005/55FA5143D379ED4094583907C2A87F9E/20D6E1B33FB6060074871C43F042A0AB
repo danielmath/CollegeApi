@@ -1,0 +1,70 @@
+﻿using College.Application.DTOs;
+using College.Application.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CollegeApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class CourseController : ControllerBase
+    {
+        private readonly ICourseService _courseService;
+
+        public CourseController(ICourseService courseService)
+        {
+            _courseService = courseService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CourseDto>>> GetAllCourses()
+        {
+            var courses = await _courseService.GetAllAsync();
+            return Ok(courses);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CourseDto>> GetCourseById(Guid id)
+        {
+            var course = await _courseService.GetByIdAsync(id);
+            if (course == null)
+                return NotFound();
+
+            return Ok(course);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CourseDto>> CreateCourse([FromBody] CreateCourseDto createCourseDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var course = await _courseService.CreateAsync(createCourseDto);
+
+            return CreatedAtAction(nameof(GetCourseById), new { id = course.id }, course);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<CourseDto>> UpdateCourse(Guid id, [FromBody] UpdateCourseDto updateCourseDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var course = await _courseService.UpdateAsync(id, updateCourseDto);
+
+            if (course == null)
+                return NotFound();
+
+            return Ok(course);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteCourse(Guid id)
+        {
+            var result = await _courseService.DeleteAsync(id);
+            if (!result)
+                return NotFound();
+
+            return NoContent();
+        }
+    }
+}

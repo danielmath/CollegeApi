@@ -1,0 +1,78 @@
+﻿using College.Application.DTOs;
+using College.Domain.Entities;
+using College.Domain.Repositories;
+
+namespace College.Application.Services
+{
+    public class StudentService : IStudentService
+    {
+        private readonly IStudentRepository _studentRepository;
+
+        public StudentService(IStudentRepository studentRepository)
+        {
+            _studentRepository = studentRepository;
+        }
+
+        public async Task<StudentDto?> GetByIdAsync(Guid id)
+        {
+            var student = await _studentRepository.GetByIdAsync(id);
+            if (student == null)
+                return null;
+
+            return new StudentDto
+            {
+                id = student.Id,
+                fullName = student.FullName
+            };
+        }
+
+        public async Task<IEnumerable<StudentDto>> GetAllAsync()
+        {
+            var students = await _studentRepository.GetAllAsync();
+            
+            return students.Select(student => new StudentDto
+            {
+                id = student.Id,
+                fullName = student.FullName
+            });
+        }
+
+        public async Task<StudentDto> CreateAsync(CreateStudentDto createStudentDto)
+        {
+            var student = new Student(createStudentDto.fullName);
+            var createdStudent = await _studentRepository.AddAsync(student);
+
+            return new StudentDto
+            {
+                id = createdStudent.Id,
+                fullName = createdStudent.FullName
+            };
+        }
+
+        public async Task<StudentDto?> UpdateAsync(Guid id, UpdateStudentDto updateStudentDto)
+        {
+            var student = await _studentRepository.GetByIdAsync(id);
+            if (student == null)
+                return null;
+
+            student.UpdateFullName(updateStudentDto.fullName);
+            await _studentRepository.UpdateAsync(student);
+
+            return new StudentDto
+            {
+                id = student.Id,
+                fullName = student.FullName
+            };
+        }
+
+        public async Task<bool> DeleteAsync(Guid id)
+        {
+            var student = await _studentRepository.GetByIdAsync(id);
+            if (student == null)
+                return false;
+
+            await _studentRepository.DeleteAsync(id);
+            return true;
+        }
+    }
+}

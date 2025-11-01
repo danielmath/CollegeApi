@@ -1,0 +1,84 @@
+﻿using College.Application.DTOs;
+using College.Application.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CollegeApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [Authorize]
+    public class StudentController : ControllerBase
+    {
+        private readonly IStudentService _studentService;
+
+        public StudentController(IStudentService studentService)
+        {
+            _studentService = studentService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<StudentDto>>> GetAllStudents()
+        {
+            IEnumerable<StudentDto> studentsCollection = await _studentService.GetAllAsync();
+            return Ok(studentsCollection);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<StudentDto>> GetStudentById(int id)
+        {
+            StudentDto? studentDto = await _studentService.GetByIdAsync(id);
+            if (studentDto == null)
+                return NotFound();
+
+            return Ok(studentDto);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<StudentDto>> CreateStudent([FromBody] CreateStudentDto createStudentDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                StudentDto studentDto = await _studentService.CreateAsync(createStudentDto);
+                return CreatedAtAction(nameof(GetStudentById), new { id = studentDto.id }, studentDto);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<StudentDto>> UpdateStudent(int id, [FromBody] UpdateStudentDto updateStudentDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                StudentDto? studentDto = await _studentService.UpdateAsync(id, updateStudentDto);
+                if (studentDto == null)
+                    return NotFound();
+
+                return Ok(studentDto);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteStudent(int id)
+        {
+            bool resultOperation = await _studentService.DeleteAsync(id);
+            if (!resultOperation)
+                return NotFound();
+
+            return NoContent();
+        }
+    }
+}

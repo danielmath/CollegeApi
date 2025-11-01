@@ -1,0 +1,10 @@
+﻿using College.Application.DTOs;
+using MediatR;
+
+namespace College.Application.UseCases.Students.Queries
+{
+    public class GetStudentByIdQuery : IRequest<StudentDto?>
+    {
+        public Guid id { get; set; }
+    }
+}

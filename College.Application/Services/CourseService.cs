@@ -1,0 +1,79 @@
+using College.Application.DTOs;
+using College.Application.Services.Contracts;
+using College.Domain.Entities;
+using College.Domain.Repositories;
+
+namespace College.Application.Services
+{
+    public class CourseService : ICourseService
+    {
+        private readonly ICourseRepository _courseRepository;
+
+        public CourseService(ICourseRepository courseRepository)
+        {
+            _courseRepository = courseRepository;
+        }
+
+        public async Task<CourseDto?> GetByIdAsync(int id)
+        {
+            Course? course = await _courseRepository.GetByIdAsync(id);
+            if (course == null)
+                return null;
+
+            return new CourseDto
+            {
+                Id = course.Id,
+                Code = course.Code,
+            };
+        }
+
+        public async Task<IEnumerable<CourseDto>> GetAllAsync()
+        {
+            IEnumerable<Course> coursesCollection = await _courseRepository.GetAllAsync();
+            
+            return coursesCollection.Select(courseEntity => new CourseDto
+            {
+                Id = courseEntity.Id,
+                Code = courseEntity.Code
+            });
+        }
+
+        public async Task<CourseDto> CreateAsync(CreateCourseDto createCourseDto)
+        {
+            Course course = new Course(createCourseDto.Code);
+            Course createdCourse = await _courseRepository.AddAsync(course);
+
+            return new CourseDto
+            {
+                Id = createdCourse.Id,
+                Code = createdCourse.Code,
+            };
+        }
+
+        public async Task<CourseDto?> UpdateAsync(int id, UpdateCourseDto updateCourseDto)
+        {
+            Course? course = await _courseRepository.GetByIdAsync(id);
+            if (course == null)
+                return null;
+
+            course.UpdateDetails(updateCourseDto.Code);
+            await _courseRepository.UpdateAsync(course);
+
+            return new CourseDto
+            {
+                Id = course.Id,
+                Code = course.Code,
+            };
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            Course? course = await _courseRepository.GetByIdAsync(id);
+            if (course == null)
+                return false;
+
+            await _courseRepository.DeleteAsync(id);
+            return true;
+        }
+    }
+}

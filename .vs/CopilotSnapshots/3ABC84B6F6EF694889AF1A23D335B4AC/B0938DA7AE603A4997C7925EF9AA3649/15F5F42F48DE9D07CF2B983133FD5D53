@@ -1,0 +1,74 @@
+﻿using College.Application.DTOs;
+using College.Application.UseCases.Students.Commands;
+using College.Application.UseCases.Students.Queries;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CollegeApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class StudentController : ControllerBase
+    {
+        private readonly IMediator _mediator;
+
+        public StudentController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<StudentDto>>> GetAllStudents()
+        {
+            var students = await _mediator.Send(new GetAllStudentsQuery());
+            return Ok(students);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<StudentDto>> GetStudentById(Guid id)
+        {
+            var student = await _mediator.Send(new GetStudentByIdQuery { id = id });
+            if (student == null)
+                return NotFound();
+
+            return Ok(student);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<StudentDto>> CreateStudent([FromBody] CreateStudentDto createStudentDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var command = new CreateStudentCommand { fullName = createStudentDto.fullName };
+            var student = await _mediator.Send(command);
+
+            return CreatedAtAction(nameof(GetStudentById), new { id = student.id }, student);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<StudentDto>> UpdateStudent(Guid id, [FromBody] UpdateStudentDto updateStudentDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var command = new UpdateStudentCommand { id = id, fullName = updateStudentDto.fullName };
+            var student = await _mediator.Send(command);
+
+            if (student == null)
+                return NotFound();
+
+            return Ok(student);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteStudent(Guid id)
+        {
+            var result = await _mediator.Send(new DeleteStudentCommand { id = id });
+            if (!result)
+                return NotFound();
+
+            return NoContent();
+        }
+    }
+}

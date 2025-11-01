@@ -1,0 +1,72 @@
+﻿using College.Application.DTOs;
+using College.Application.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CollegeApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [Authorize]
+    public class ProfessorController : ControllerBase
+    {
+        private readonly IProfessorService _professorService;
+
+        public ProfessorController(IProfessorService professorService)
+        {
+            _professorService = professorService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProfessorDto>>> GetAllProfessors()
+        {
+            var professors = await _professorService.GetAllAsync();
+            return Ok(professors);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProfessorDto>> GetProfessorById(Guid id)
+        {
+            var professor = await _professorService.GetByIdAsync(id);
+            if (professor == null)
+                return NotFound();
+
+            return Ok(professor);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<ProfessorDto>> CreateProfessor([FromBody] CreateProfessorDto createProfessorDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var professor = await _professorService.CreateAsync(createProfessorDto);
+
+            return CreatedAtAction(nameof(GetProfessorById), new { id = professor.id }, professor);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ProfessorDto>> UpdateProfessor(Guid id, [FromBody] UpdateProfessorDto updateProfessorDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var professor = await _professorService.UpdateAsync(id, updateProfessorDto);
+
+            if (professor == null)
+                return NotFound();
+
+            return Ok(professor);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteProfessor(Guid id)
+        {
+            var result = await _professorService.DeleteAsync(id);
+            if (!result)
+                return NotFound();
+
+            return NoContent();
+        }
+    }
+}

@@ -1,0 +1,65 @@
+using College.Application.DTOs;
+using College.Application.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CollegeApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [Authorize]
+    public class CourseController : ControllerBase
+    {
+        private readonly ICourseService _courseService;
+
+        public CourseController(ICourseService courseService)
+        {
+            _courseService = courseService;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CourseDto>> GetCourseById(int id)
+        {
+            CourseDto? courseDto = await _courseService.GetByIdAsync(id);
+            if (courseDto == null)
+                return NotFound();
+
+            return Ok(courseDto);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CourseDto>> CreateCourse([FromBody] CreateCourseDto createCourseDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            CourseDto courseDto = await _courseService.CreateAsync(createCourseDto);
+
+            return CreatedAtAction(nameof(GetCourseById), new { id = courseDto.Id }, courseDto);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<CourseDto>> UpdateCourse(int id, [FromBody] UpdateCourseDto updateCourseDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            CourseDto? courseDto = await _courseService.UpdateAsync(id, updateCourseDto);
+
+            if (courseDto == null)
+                return NotFound();
+
+            return Ok(courseDto);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteCourse(int id)
+        {
+            bool resultOperation = await _courseService.DeleteAsync(id);
+            if (!resultOperation)
+                return NotFound();
+
+            return NoContent();
+        }
+    }
+}

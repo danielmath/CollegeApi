@@ -1,0 +1,10 @@
+﻿namespace College.Application.DTOs
+{
+    public class ProfessorDto
+    {
+        public int id { get; set; }
+        public string fullName { get; set; } = string.Empty;
+        public string email { get; set; } = string.Empty;
+        public string department { get; set; } = string.Empty;
+    }
+}

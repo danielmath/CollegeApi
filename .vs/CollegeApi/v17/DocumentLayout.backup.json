@@ -1,0 +1,894 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\services\\gradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\services\\gradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collegeapi\\controllers\\gradecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|solutionrelative:collegeapi\\controllers\\gradecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|solutionrelative:collage.infrastructure\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.domain\\repositories\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|solutionrelative:collage.domain\\repositories\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\services\\contracts\\igradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\services\\contracts\\igradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.domain\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|solutionrelative:collage.domain\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.infrastructure\\data\\collegedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|solutionrelative:collage.infrastructure\\data\\collegedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.domain\\entities\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|solutionrelative:collage.domain\\entities\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.domain\\entities\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|solutionrelative:collage.domain\\entities\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.domain\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|solutionrelative:collage.domain\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.infrastructure\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|solutionrelative:collage.infrastructure\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collegeapi\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|solutionrelative:collegeapi\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collegeapi\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|solutionrelative:collegeapi\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\updatestudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\updatestudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\createstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\createstudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.infrastructure\\repositories\\graderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|solutionrelative:collage.infrastructure\\repositories\\graderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.domain\\repositories\\igraderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|solutionrelative:collage.domain\\repositories\\igraderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.domain\\repositories\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|solutionrelative:collage.domain\\repositories\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\services\\contracts\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\services\\contracts\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collegeapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|solutionrelative:collegeapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collegeapi\\controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|solutionrelative:collegeapi\\controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collegeapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|solutionrelative:collegeapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\services\\professorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\services\\professorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\createprofessordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\createprofessordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\professordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\professordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\gradedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\gradedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\creategradedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\creategradedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\updateprofessordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\updateprofessordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\updategradedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\updategradedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\updatecoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\updatecoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\dtos\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\dtos\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collegeapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|solutionrelative:collegeapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.infrastructure\\college.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|solutionrelative:collage.infrastructure\\college.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collegeapi\\collegeapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2CC8E67E-3760-4DC4-B4DA-7D4074C6F73A}|CollegeApi\\CollegeApi.csproj|solutionrelative:collegeapi\\collegeapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.infrastructure\\data\\collegedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|solutionrelative:collage.infrastructure\\data\\collegedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\college.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\college.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\services\\contracts\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\services\\contracts\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.infrastructure\\repositories\\professorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0763EE2-A4C7-4462-B985-4533CEC334DC}|Collage.Infrastructure\\College.Infrastructure.csproj|solutionrelative:collage.infrastructure\\repositories\\professorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\collage.domain\\repositories\\iprofessorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A089691E-903C-423B-B8A8-BE7A252B0D34}|Collage.Domain\\College.Domain.csproj|solutionrelative:collage.domain\\repositories\\iprofessorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|c:\\users\\daniel.abreo\\onedrive - finac s.a.s\\documents\\collegeapi\\college.application\\services\\contracts\\iprofessorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07CE031-1138-46BA-A757-DD0C84B89583}|College.Application\\College.Application.csproj|solutionrelative:college.application\\services\\contracts\\iprofessorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 28,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Entities\\Student.cs",
+              "RelativeDocumentMoniker": "Collage.Domain\\Entities\\Student.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Entities\\Student.cs",
+              "RelativeToolTip": "Collage.Domain\\Entities\\Student.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAywCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:25:33.936Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Professor.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Entities\\Professor.cs",
+              "RelativeDocumentMoniker": "Collage.Domain\\Entities\\Professor.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Entities\\Professor.cs",
+              "RelativeToolTip": "Collage.Domain\\Entities\\Professor.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAIwAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:27:44.083Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Entities\\Course.cs",
+              "RelativeDocumentMoniker": "Collage.Domain\\Entities\\Course.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Entities\\Course.cs",
+              "RelativeToolTip": "Collage.Domain\\Entities\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:28:08.718Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Grade.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Entities\\Grade.cs",
+              "RelativeDocumentMoniker": "Collage.Domain\\Entities\\Grade.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Entities\\Grade.cs",
+              "RelativeToolTip": "Collage.Domain\\Entities\\Grade.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAqwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:28:34.812Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "CollegeApi\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "CollegeApi\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAUwCcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T17:16:12.437Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\StudentService.cs",
+              "RelativeDocumentMoniker": "College.Application\\Services\\StudentService.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\StudentService.cs",
+              "RelativeToolTip": "College.Application\\Services\\StudentService.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAmwGYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T17:23:41.443Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GradeService.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\GradeService.cs",
+              "RelativeDocumentMoniker": "College.Application\\Services\\GradeService.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\GradeService.cs",
+              "RelativeToolTip": "College.Application\\Services\\GradeService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAIAwwDQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:06:23.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GradeController.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\GradeController.cs",
+              "RelativeDocumentMoniker": "CollegeApi\\Controllers\\GradeController.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\GradeController.cs",
+              "RelativeToolTip": "CollegeApi\\Controllers\\GradeController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAIAwwCAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:06:46.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Repositories\\StudentRepository.cs",
+              "RelativeDocumentMoniker": "Collage.Infrastructure\\Repositories\\StudentRepository.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Repositories\\StudentRepository.cs",
+              "RelativeToolTip": "Collage.Infrastructure\\Repositories\\StudentRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAD4vxIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:42:29.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IGradeService.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\Contracts\\IGradeService.cs",
+              "RelativeDocumentMoniker": "College.Application\\Services\\Contracts\\IGradeService.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\Contracts\\IGradeService.cs",
+              "RelativeToolTip": "College.Application\\Services\\Contracts\\IGradeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:06:13.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IStudentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Repositories\\IStudentRepository.cs",
+              "RelativeDocumentMoniker": "Collage.Domain\\Repositories\\IStudentRepository.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Repositories\\IStudentRepository.cs",
+              "RelativeToolTip": "Collage.Domain\\Repositories\\IStudentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:39:06.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UpdateStudentDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\UpdateStudentDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\UpdateStudentDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\UpdateStudentDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\UpdateStudentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T17:13:51.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "CollegeApi\\Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "CollegeApi\\Controllers\\CourseController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAawDkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:06:31.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GradeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Repositories\\GradeRepository.cs",
+              "RelativeDocumentMoniker": "Collage.Infrastructure\\Repositories\\GradeRepository.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Repositories\\GradeRepository.cs",
+              "RelativeToolTip": "Collage.Infrastructure\\Repositories\\GradeRepository.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAawEMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:12.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CourseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Repositories\\CourseRepository.cs",
+              "RelativeDocumentMoniker": "Collage.Infrastructure\\Repositories\\CourseRepository.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Repositories\\CourseRepository.cs",
+              "RelativeToolTip": "Collage.Infrastructure\\Repositories\\CourseRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:43:36.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CollegeDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Data\\CollegeDbContext.cs",
+              "RelativeDocumentMoniker": "Collage.Infrastructure\\Data\\CollegeDbContext.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Data\\CollegeDbContext.cs",
+              "RelativeToolTip": "Collage.Infrastructure\\Data\\CollegeDbContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwB4AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:49:34.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CreateStudentDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CreateStudentDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\CreateStudentDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CreateStudentDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\CreateStudentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T17:13:48.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IGradeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Repositories\\IGradeRepository.cs",
+              "RelativeDocumentMoniker": "Collage.Domain\\Repositories\\IGradeRepository.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Repositories\\IGradeRepository.cs",
+              "RelativeToolTip": "Collage.Domain\\Repositories\\IGradeRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA0wBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:04:18.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CourseService.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\CourseService.cs",
+              "RelativeDocumentMoniker": "College.Application\\Services\\CourseService.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\CourseService.cs",
+              "RelativeToolTip": "College.Application\\Services\\CourseService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAywE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:56.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ICourseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Repositories\\ICourseRepository.cs",
+              "RelativeDocumentMoniker": "Collage.Domain\\Repositories\\ICourseRepository.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Repositories\\ICourseRepository.cs",
+              "RelativeToolTip": "Collage.Domain\\Repositories\\ICourseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:39:44.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ICourseService.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\Contracts\\ICourseService.cs",
+              "RelativeDocumentMoniker": "College.Application\\Services\\Contracts\\ICourseService.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\Contracts\\ICourseService.cs",
+              "RelativeToolTip": "College.Application\\Services\\Contracts\\ICourseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:48.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Program.cs",
+              "RelativeDocumentMoniker": "CollegeApi\\Program.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Program.cs",
+              "RelativeToolTip": "CollegeApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T17:31:17.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ProfessorController.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\ProfessorController.cs",
+              "RelativeDocumentMoniker": "CollegeApi\\Controllers\\ProfessorController.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\ProfessorController.cs",
+              "RelativeToolTip": "CollegeApi\\Controllers\\ProfessorController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwBMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:06:39.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "CollegeApi\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "CollegeApi\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAkwBkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:37:44.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "StudentDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\StudentDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\StudentDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\StudentDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\StudentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T17:13:45.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CourseDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CourseDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\CourseDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CourseDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\CourseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:15.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "IProfessorService.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\Contracts\\IProfessorService.cs",
+              "RelativeDocumentMoniker": "College.Application\\Services\\Contracts\\IProfessorService.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\Contracts\\IProfessorService.cs",
+              "RelativeToolTip": "College.Application\\Services\\Contracts\\IProfessorService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBbwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T20:34:00.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ProfessorService.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\ProfessorService.cs",
+              "RelativeDocumentMoniker": "College.Application\\Services\\ProfessorService.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\ProfessorService.cs",
+              "RelativeToolTip": "College.Application\\Services\\ProfessorService.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAywD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:06:08.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CreateProfessorDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CreateProfessorDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\CreateProfessorDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CreateProfessorDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\CreateProfessorDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:30.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ProfessorDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\ProfessorDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\ProfessorDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\ProfessorDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\ProfessorDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:26.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "GradeDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\GradeDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\GradeDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\GradeDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\GradeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:37.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "CreateGradeDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CreateGradeDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\CreateGradeDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CreateGradeDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\CreateGradeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:41.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UpdateProfessorDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\UpdateProfessorDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\UpdateProfessorDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\UpdateProfessorDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\UpdateProfessorDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:33.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "UpdateGradeDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\UpdateGradeDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\UpdateGradeDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\UpdateGradeDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\UpdateGradeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:44.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "UpdateCourseDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\UpdateCourseDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\UpdateCourseDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\UpdateCourseDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\UpdateCourseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:23.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\LoginResponse.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\LoginResponse.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\LoginResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:37:34.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\LoginRequest.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:37:31.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CreateCourseDto.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CreateCourseDto.cs",
+              "RelativeDocumentMoniker": "College.Application\\DTOs\\CreateCourseDto.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\DTOs\\CreateCourseDto.cs",
+              "RelativeToolTip": "College.Application\\DTOs\\CreateCourseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:05:19.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\appsettings.json",
+              "RelativeDocumentMoniker": "CollegeApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\appsettings.json",
+              "RelativeToolTip": "CollegeApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-01T16:05:50.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "College.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\College.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "Collage.Infrastructure\\College.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\College.Infrastructure.csproj",
+              "RelativeToolTip": "Collage.Infrastructure\\College.Infrastructure.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-01T17:52:03.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "CollegeDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Data\\CollegeDbContextFactory.cs",
+              "RelativeDocumentMoniker": "Collage.Infrastructure\\Data\\CollegeDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Data\\CollegeDbContextFactory.cs",
+              "RelativeToolTip": "Collage.Infrastructure\\Data\\CollegeDbContextFactory.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAABUwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T17:51:52.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CollegeApi.csproj",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\CollegeApi.csproj",
+              "RelativeDocumentMoniker": "CollegeApi\\CollegeApi.csproj",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\CollegeApi\\CollegeApi.csproj",
+              "RelativeToolTip": "CollegeApi\\CollegeApi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-01T17:16:35.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "College.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\College.Application.csproj",
+              "RelativeDocumentMoniker": "College.Application\\College.Application.csproj",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\College.Application.csproj",
+              "RelativeToolTip": "College.Application\\College.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-01T17:16:16.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "IStudentService.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\Contracts\\IStudentService.cs",
+              "RelativeDocumentMoniker": "College.Application\\Services\\Contracts\\IStudentService.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\College.Application\\Services\\Contracts\\IStudentService.cs",
+              "RelativeToolTip": "College.Application\\Services\\Contracts\\IStudentService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA+wAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T17:23:34.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ProfessorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Repositories\\ProfessorRepository.cs",
+              "RelativeDocumentMoniker": "Collage.Infrastructure\\Repositories\\ProfessorRepository.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Infrastructure\\Repositories\\ProfessorRepository.cs",
+              "RelativeToolTip": "Collage.Infrastructure\\Repositories\\ProfessorRepository.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAABOwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:44:57.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "IProfessorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Repositories\\IProfessorRepository.cs",
+              "RelativeDocumentMoniker": "Collage.Domain\\Repositories\\IProfessorRepository.cs",
+              "ToolTip": "C:\\Users\\daniel.abreo\\OneDrive - FINAC S.A.S\\Documents\\CollegeApi\\Collage.Domain\\Repositories\\IProfessorRepository.cs",
+              "RelativeToolTip": "Collage.Domain\\Repositories\\IProfessorRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAMBXwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:41:30.009Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

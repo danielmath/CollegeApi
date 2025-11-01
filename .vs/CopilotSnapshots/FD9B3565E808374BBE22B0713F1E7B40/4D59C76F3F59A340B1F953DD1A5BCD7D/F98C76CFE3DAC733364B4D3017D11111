@@ -1,0 +1,110 @@
+﻿using College.Application.DTOs;
+using College.Domain.Entities;
+using College.Domain.Repositories;
+
+namespace College.Application.Services
+{
+    public class GradeService : IGradeService
+    {
+        private readonly IGradeRepository _gradeRepository;
+        private readonly IStudentRepository _studentRepository;
+        private readonly ICourseRepository _courseRepository;
+
+        public GradeService(IGradeRepository gradeRepository, IStudentRepository studentRepository, ICourseRepository courseRepository)
+        {
+            _gradeRepository = gradeRepository;
+            _studentRepository = studentRepository;
+            _courseRepository = courseRepository;
+        }
+
+        public async Task<GradeDto?> GetByIdAsync(int id)
+        {
+            var grade = await _gradeRepository.GetByIdAsync(id);
+            if (grade == null)
+                return null;
+
+            return new GradeDto
+            {
+                id = grade.Id,
+                value = grade.Value,
+                letter = grade.Letter,
+                dateRecorded = grade.DateRecorded,
+                studentId = grade.StudentId,
+                courseId = grade.CourseId
+            };
+        }
+
+        public async Task<IEnumerable<GradeDto>> GetAllAsync()
+        {
+            var grades = await _gradeRepository.GetAllAsync();
+            
+            return grades.Select(grade => new GradeDto
+            {
+                id = grade.Id,
+                value = grade.Value,
+                letter = grade.Letter,
+                dateRecorded = grade.DateRecorded,
+                studentId = grade.StudentId,
+                courseId = grade.CourseId
+            });
+        }
+
+        public async Task<GradeDto> CreateAsync(CreateGradeDto createGradeDto)
+        {
+            var studentExists = await _studentRepository.GetByIdAsync(createGradeDto.studentId);
+            if (studentExists == null)
+            {
+                throw new InvalidOperationException($"El estudiante con ID {createGradeDto.studentId} no existe. No se puede crear la calificación.");
+            }
+
+            var courseExists = await _courseRepository.GetByIdAsync(createGradeDto.courseId);
+            if (courseExists == null)
+            {
+                throw new InvalidOperationException($"El curso con ID {createGradeDto.courseId} no existe. No se puede crear la calificación.");
+            }
+
+            var grade = new Grade(createGradeDto.value, createGradeDto.letter, createGradeDto.studentId, createGradeDto.courseId);
+            var createdGrade = await _gradeRepository.AddAsync(grade);
+
+            return new GradeDto
+            {
+                id = createdGrade.Id,
+                value = createdGrade.Value,
+                letter = createdGrade.Letter,
+                dateRecorded = createdGrade.DateRecorded,
+                studentId = createdGrade.StudentId,
+                courseId = createdGrade.CourseId
+            };
+        }
+
+        public async Task<GradeDto?> UpdateAsync(int id, UpdateGradeDto updateGradeDto)
+        {
+            var grade = await _gradeRepository.GetByIdAsync(id);
+            if (grade == null)
+                return null;
+
+            grade.UpdateGrade(updateGradeDto.value, updateGradeDto.letter);
+            await _gradeRepository.UpdateAsync(grade);
+
+            return new GradeDto
+            {
+                id = grade.Id,
+                value = grade.Value,
+                letter = grade.Letter,
+                dateRecorded = grade.DateRecorded,
+                studentId = grade.StudentId,
+                courseId = grade.CourseId
+            };
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var grade = await _gradeRepository.GetByIdAsync(id);
+            if (grade == null)
+                return false;
+
+            await _gradeRepository.DeleteAsync(id);
+            return true;
+        }
+    }
+}

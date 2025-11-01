@@ -1,0 +1,13 @@
+using College.Application.DTOs;
+
+namespace College.Application.Services.Contracts
+{
+    public interface IStudentService
+    {
+        Task<StudentDto?> GetByIdAsync(int id);
+        Task<IEnumerable<StudentDto>> GetAllAsync();
+        Task<StudentDto> CreateAsync(CreateStudentDto createStudentDto);
+        Task<StudentDto?> UpdateAsync(int id, UpdateStudentDto updateStudentDto);
+        Task<bool> DeleteAsync(int id);
+    }
+}

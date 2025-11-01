@@ -1,0 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+
+namespace College.Infrastructure.Data
+{
+    public class CollegeDbContextFactory : IDesignTimeDbContextFactory<CollegeDbContext>
+    {
+        public CollegeDbContext CreateDbContext(string[] args)
+        {
+            IConfigurationRoot configurationRoot = new ConfigurationBuilder()
+                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../CollegeApi"))
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            DbContextOptionsBuilder<CollegeDbContext> optionsBuilderObject = new DbContextOptionsBuilder<CollegeDbContext>();
+            string? connectionStringValue = configurationRoot.GetConnectionString("DefaultConnection");
+            
+            optionsBuilderObject.UseSqlServer(connectionStringValue);
+
+            return new CollegeDbContext(optionsBuilderObject.Options);
+        }
+    }
+}
